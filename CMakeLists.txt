@@ -40,7 +40,7 @@ add_subdirectory(apps)
 if (MSVC)
         add_subdirectory(tools/deps/wingetopt)
 endif(MSVC)
-add_subdirectory(tools/eeprom-tool)
+#add_subdirectory(tools/eeprom-tool)
 
 if (WITH_EXAMPLES)
         add_subdirectory(examples)

@@ -37,7 +37,8 @@
 #include "temperature_get_fcn.h"
 #include <string>
 
-#include <aditof/device_interface.h>
+// #include <aditof/device_interface.h>
+#include <aditof/depth_sensor_interface.h>
 
 #include <exception>
 #ifndef _WIN32
@@ -299,7 +300,7 @@ void SourceAdaptor::setSmallSignalValue(int16_t value) {
     // TO DO: This breaks things over USB. Works well on the target and
     // over ethernet.
     if (m_camera) {
-        m_camera->getDevice()->writeAfeRegisters(afeRegsAddr, afeRegsVal, 5);
+        m_camera->getSensor()->writeAfeRegisters(afeRegsAddr, afeRegsVal, 5);
     }
 }
 
@@ -345,7 +346,7 @@ float SourceAdaptor::readAfeTemp() {
         return 0.0;
     }
 
-    m_camera->getDevice()->readAfeTemp(afeTemp);
+    // m_camera->getTemperatureSensors()->readAfeTemp(afeTemp);
     return afeTemp;
 }
 
@@ -356,7 +357,7 @@ float SourceAdaptor::readLaserTemp() {
         return 0.0;
     }
 
-    m_camera->getDevice()->readLaserTemp(laserTemp);
+    // m_camera->getDevice()->readLaserTemp(laserTemp);
     return laserTemp;
 }
 

@@ -49,7 +49,6 @@ aditof::System *m_system = nullptr;
 
 void initializeAdaptor() {
     m_system = new aditof::System();
-    m_system->initialize();
 }
 
 /**
